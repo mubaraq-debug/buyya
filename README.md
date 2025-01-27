@@ -20,25 +20,14 @@ Discover the future of online shopping with this sleek, fast, and user-friendly 
 
 Frontend: React.js ⚛️, Tailwind CSS 🎨
 
-Backend: Node.js 🟢, Express.js 🚀
+Backend: AppWrite (BaaS)🟢 🚀
 
-Database: MongoDB 🍃
+Database: AppWrite DB 🍃
 
-Authentication: JWT 🔑
+Authentication: AppWrite Auth 🔑
 
-Deployment: Vercel 🚀, Heroku 🛠️
+Deployment: Vercel 🚀, 
 
-📂 Repository Structure:
-
-client/: Frontend code
-
-server/: Backend code
-
-models/: Database models
-
-routes/: API routes
-
-middleware/: Custom middleware
 
 👥 Contributing:
 We welcome contributions! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. 🤝💡
