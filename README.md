@@ -20,11 +20,11 @@ Discover the future of online shopping with this sleek, fast, and user-friendly 
 
 Frontend: React.js ⚛️, Tailwind CSS 🎨
 
-Backend: AppWrite (BaaS)🟢 🚀
+Backend: FireBase (BaaS)🟢 🚀
 
-Database: AppWrite DB 🍃
+Database: FireBase DB 🍃
 
-Authentication: AppWrite Auth 🔑
+Authentication: FireBase Auth 🔑
 
 Deployment: Vercel 🚀, 
 
