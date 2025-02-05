@@ -21,7 +21,7 @@ const appRoutes = () => {
         <Route path="*" element={<NotFound />} />
 
         <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<UserDashboard />} />
+            <Route path="/user-dashboard" element={<UserDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
         </Route>
     </Routes>
