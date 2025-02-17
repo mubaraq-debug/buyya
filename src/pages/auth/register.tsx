@@ -1,6 +1,8 @@
-import React,  {useState} from "react";
+import React, { useState } from "react";
 import { useAuth } from "../../context/authContext.tsx";
 import { Link, useNavigate } from "react-router-dom";
+import { FaUserAlt, FaEnvelope, FaLock, FaMapMarkerAlt} from "react-icons/fa";
+import AuthLayout from "../../layouts/authlayout.tsx";
 
 const Register: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -21,59 +23,71 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            className="w-full p-2 border rounded"
-            required
-          />
+    <AuthLayout>
+      <div className="bg-white p-6 shadow-md w-[80%]">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Create an account</h2>
+        <form onSubmit={handleSubmit} className="space-y-5 pt-5">
+          <div className="user flex items-center gap-4 p-2 border border-t-0 border-x-0 border-b-[1.3px] border-b-black outline-none">
+            <FaUserAlt />
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="outline-none border-none w-full"
+              required
+            />
+          </div>
+          <div className="user flex items-center gap-4 p-2 border border-t-0 border-x-0 border-b-[1.3px] border-b-black outline-none">
+            <FaEnvelope />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="outline-none border-none w-full"
+              required
+            />
+          </div>
+          <div className="user flex items-center gap-4 p-2 border border-t-0 border-x-0 border-b-[1.3px] border-b-black outline-none">
+            <FaLock />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="outline-none border-none w-full"
+              required
+            />
+          </div>
+
+          <div className="user flex items-center gap-4 p-2 border border-t-0 border-x-0 border-b-[1.3px] border-b-black outline-none">
+            <FaMapMarkerAlt />
+            <input
+              type="text"
+              placeholder="Address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className="outline-none border-none w-full"
+              required
+            />
+          </div>
           <button
             type="submit"
-            className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600"
+            className="w-full bg-buya-bright text-buya-white p-2 rounded"
           >
             Register
           </button>
         </form>
         <p className="mt-4 text-center">
           Already have an account?{" "}
-          <Link to="/login" className="text-green-500">
+          <Link to="/login" className="text-buya-bright font-medium">
             Login
           </Link>
         </p>
       </div>
-    </div>
+    </AuthLayout>
   );
 };
 
-
-export default Register
+export default Register;

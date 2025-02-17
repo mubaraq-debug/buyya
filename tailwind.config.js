@@ -5,7 +5,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'buya-bright': '#FF6F00',
+        'buya-green': '#00FF85',
+        'buya-white': '#ffffff',
+        'buya-dark': '#000000'
+      }
+    },
   },
   plugins: [],
 }
