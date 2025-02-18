@@ -29,7 +29,8 @@ interface AuthContextProps {
     email: string,
     password: string,
     name: string,
-    address: string
+    address: string,
+    phoneNumber: string,
   ) => Promise<void>;
   LogOut: () => Promise<void>;
 }
@@ -102,13 +103,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   };
   
 
-  const Register = async (email: string, password: string, name: string, address: string) => {
+  const Register = async (email: string, password: string, name: string, address: string, phoneNumber: string) => {
     try {
       const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredentials.user;
   
       const userDocRef = doc(firestore, "users", user.uid);
-      await setDoc(userDocRef, { email, name, address, role: "user" });
+      await setDoc(userDocRef, { email, name, address, role: "user", phoneNumber });
   
       // Fetch user from Firestore after registration
       const userDoc = await getDoc(userDocRef);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/authContext.tsx";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserAlt, FaEnvelope, FaLock, FaMapMarkerAlt} from "react-icons/fa";
+import { FaUserAlt, FaEnvelope, FaLock, FaMapMarkerAlt, FaPhoneAlt, FaPhone} from "react-icons/fa";
 import AuthLayout from "../../layouts/authlayout.tsx";
 
 const Register: React.FC = () => {
@@ -9,13 +9,15 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   const { Register } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await Register(email, password, name, address);
+      await Register(email, password, name, address, phoneNumber);
       navigate("/dashboard");
     } catch (err) {
       console.error("Registration failed", err);
@@ -45,6 +47,17 @@ const Register: React.FC = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="outline-none border-none w-full"
+              required
+            />
+          </div>
+          <div className="user flex items-center gap-4 p-2 border border-t-0 border-x-0 border-b-[1.3px] border-b-black outline-none">
+            <FaPhoneAlt />
+            <input
+              type="text"
+              placeholder="Phone Number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
               className="outline-none border-none w-full"
               required
             />
