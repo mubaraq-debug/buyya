@@ -10,6 +10,8 @@ import UserDashboard from '../pages/dashboards/userDashboard/index.tsx';
 import NotFound from '../pages/NotFound.tsx';
 import UnAuthorized from './unathorized.tsx';
 import ProtectedRoute from './protectedRoutes.tsx'
+
+import Profile from '../pages/profile.tsx';
 const appRoutes = () => {
   return (
     <Routes>
@@ -22,6 +24,8 @@ const appRoutes = () => {
         <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<UserDashboard />} />
         </Route>
+        
+        <Route path='/profile/:userId' element={<Profile />} />
     </Routes>
   )
 }
